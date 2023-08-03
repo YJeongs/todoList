@@ -1,0 +1,130 @@
+body {
+    margin : 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+nav ul {
+    justify-content: right;
+    display:flex;
+    margin: 30px;
+}
+nav li {
+    list-style: none;
+    font-weight: bold;
+}
+.home::after {
+    padding: 10px;
+    content: "|";
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color :rgb(82, 162, 231);
+    text-decoration: underline;
+}
+
+.todolist, .join {
+    background-color:rgb(172, 210, 245);
+    width: 680px;
+    height: 610px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 10px grey;
+}
+
+.todolist header {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.todolist input {
+    width: 400px;
+    height: 32px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.todolist .input {
+    text-align : center;
+    margin-bottom: 40px;
+}
+
+.todolist button {
+    background-color:rgb(143, 196, 243);
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.todolist .save {
+    margin-left: 120px;
+}
+
+.todolist li {
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.todolist span{
+    margin-left : 18px;
+    cursor: pointer;
+}
+
+.join header {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-container .name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin: 20px;
+}
+
+.form-group input {
+    height: 28px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.form-group button {
+    background-color: rgb(143, 196, 243);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: rgb(80, 166, 241);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.id-check {
+    padding: 4px;
+}
+
+.registration {
+    margin-top : 10px;
+    padding: 8px;
+    width: 100px;
+}
