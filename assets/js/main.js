@@ -1,18 +1,18 @@
 class Task {
-    static taskscount = 0; // 클래스 변수(static 변수)
+    static taskscount = 0; 
 
     constructor() {
         this.taskInput = document.getElementById("taskInput");
         this.taskList = document.getElementById("taskList");
-        this.addButton = document.getElementById("addButton");
+        this.addBtn = document.getElementById("addButton");
 
-        this.addButton.addEventListener("click", this.addTask.bind(this));
+        this.addBtn.addEventListener("click", this.addTask.bind(this));
         this.taskList.addEventListener("click", this.handleTaskListClick.bind(this));
         this.taskInput.addEventListener("keypress", this.handleKeyPress.bind(this));
     }
 
     taskscountcheck() {
-        if (Task.taskscount >= 10) { // 클래스 변수(static 변수) 참조
+        if (Task.taskscount >= 10) { 
             alert("일정은 10개까지만 추가 가능합니다.");
             return true;
         }
@@ -41,7 +41,7 @@ class Task {
         deleteBtn.textContent = "x";
         newTask.appendChild(deleteBtn);
 
-        Task.taskscount += 1; // 일정 개수 증가 (클래스 변수 수정)
+        Task.taskscount += 1; // 일정 개수 증가 
         this.taskInput.value = "";
     }
 
@@ -50,7 +50,7 @@ class Task {
         const taskToRemove = event.target.closest("li");
         if (taskToRemove) {
             this.taskList.removeChild(taskToRemove); // 할 일 삭제
-            Task.taskscount -= 1; // 일정 개수 감소 (클래스 변수 수정)
+            Task.taskscount -= 1; // 일정 개수 감소 
         }
     }
 
@@ -62,6 +62,7 @@ class Task {
         }
     }
 
+    // Enter 키 눌렀을 경우 
     handleKeyPress(event) {
         if (event.key === "Enter") {
             this.addTask();
@@ -80,7 +81,7 @@ class Valid {
     }
   }
 
-//사용자 정보 클래스
+// 사용자 정보 클래스
 class UserForm {
     constructor() {
         this.usersInfo = []; //id 저장할 배열 생성
