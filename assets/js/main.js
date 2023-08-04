@@ -12,8 +12,8 @@ class Task {
     }
 
     taskscountcheck() {
-        if (Task.taskscount >= 10) { 
-            alert("일정은 10개까지만 추가 가능합니다.");
+        if (Task.taskscount >= 9) { 
+            alert("일정은 9개까지만 추가 가능합니다.");
             return true;
         }
         return false;
