@@ -89,13 +89,12 @@ class UserForm {
         this.usersInfo = []; //id 저장할 배열 생성
         this.firstName = document.getElementById("first-name");
         this.lastName = document.getElementById("last-name");
-        this.nickName = document.getElementById("nickname");
         this.idInput = document.getElementById("id");
         this.passwordInput = document.getElementById("password");
         this.registerBtn = document.getElementById("registerButton");
         this.checkBtn = document.getElementById("checkButton");
         this.idmsg = document.getElementById("idmsg");
-        this.pwerrormsg = document.getElementById("pwerrormsg");
+        this.pwerrmsg = document.getElementById("pwerrormsg");
 
         this.registerBtn.addEventListener("click", this.registerUser.bind(this));
         this.checkBtn.addEventListener("click", this.idCheck.bind(this));
@@ -104,11 +103,10 @@ class UserForm {
     reset() {
         this.firstName.value = "";
         this.lastName.value = "";
-        this.nickName.value = "";
         this.idInput.value = "";
         this.passwordInput.value = "";
         this.idmsg.textContent = "";
-        this.pwerrormsg.textContent = "";
+        this.pwerrmsg.textContent = "";
     }
 
     //아이디 중복 체크 버튼
@@ -120,7 +118,7 @@ class UserForm {
         }
       
         if (Valid.isUseridAvailable(this.usersInfo, userid)) {
-            idmsg.textContent = "사용가능한 아이디 입니다.";
+            this.idmsg.textContent = "사용가능한 아이디 입니다.";
         } else {
             alert("사용할 수 없는 아이디입니다.");
         }
@@ -141,7 +139,7 @@ class UserForm {
         }
 
         if (!Valid.isPasswordValid(password)) {
-            pwerrormsg.textContent = "비밀번호를 다시 입력하세요.";
+            this.pwerrmsg.textContent = "비밀번호를 다시 입력하세요.";
             alert("비밀번호는 8자 이상 최소 하나의 문자와 하나의 숫자를 포함해야합니다.");
             return;
         }
@@ -152,8 +150,8 @@ class UserForm {
     }
 }
 
-export { UserForm };
 export { Task };
+export { UserForm };
 import { init } from "./pageManager.js";
 
 init();
