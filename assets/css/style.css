@@ -99,6 +99,7 @@ nav a:hover {
 .form-container .name{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 22px;
 }
 
 .form-group {
@@ -131,7 +132,7 @@ label {
 .id-check {
     padding: 4px;
 }
-#idmsg, #pwerrmsg {
+#idmsg, #pwerrormsg {
     color: rgb(56, 83, 235);
     font-size: 13px;
     padding: 6px 3px;
@@ -141,7 +142,6 @@ label {
 }
 
 .registration {
-    margin-top : 10px;
     padding: 8px;
     width: 100px;
 }
