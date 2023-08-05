@@ -131,6 +131,14 @@ label {
 .id-check {
     padding: 4px;
 }
+#idmsg, #pwerrmsg {
+    color: rgb(56, 83, 235);
+    font-size: 13px;
+    padding: 6px 3px;
+}
+#pwerrormsg {
+    color: rgb(221, 67, 106);
+}
 
 .registration {
     margin-top : 10px;

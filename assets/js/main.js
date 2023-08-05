@@ -1,3 +1,4 @@
+//일정 관리 클래스
 class Task {
     static taskscount = 0; 
 
@@ -11,6 +12,7 @@ class Task {
         this.taskInput.addEventListener("keypress", this.handleKeyPress.bind(this));
     }
 
+    //일정 개수 체크
     taskscountcheck() {
         if (Task.taskscount >= 9) { 
             alert("일정은 9개까지만 추가 가능합니다.");
@@ -92,7 +94,9 @@ class UserForm {
         this.passwordInput = document.getElementById("password");
         this.registerBtn = document.getElementById("registerButton");
         this.checkBtn = document.getElementById("checkButton");
-        
+        this.idmsg = document.getElementById("idmsg");
+        this.pwerrormsg = document.getElementById("pwerrormsg");
+
         this.registerBtn.addEventListener("click", this.registerUser.bind(this));
         this.checkBtn.addEventListener("click", this.idCheck.bind(this));
     }
@@ -103,6 +107,8 @@ class UserForm {
         this.nickName.value = "";
         this.idInput.value = "";
         this.passwordInput.value = "";
+        this.idmsg.textContent = "";
+        this.pwerrormsg.textContent = "";
     }
 
     //아이디 중복 체크 버튼
@@ -114,7 +120,7 @@ class UserForm {
         }
       
         if (Valid.isUseridAvailable(this.usersInfo, userid)) {
-            alert("사용가능한 아이디 입니다.");
+            idmsg.textContent = "사용가능한 아이디 입니다.";
         } else {
             alert("사용할 수 없는 아이디입니다.");
         }
@@ -124,7 +130,6 @@ class UserForm {
     registerUser() {
         const userid = this.idInput.value.trim();
         const password = this.passwordInput.value;
-    
         if (userid === "" || password === "") {
             alert("아이디 또는 비밀번호를 입력해주세요");
             return;
@@ -136,6 +141,7 @@ class UserForm {
         }
 
         if (!Valid.isPasswordValid(password)) {
+            pwerrormsg.textContent = "비밀번호를 다시 입력하세요.";
             alert("비밀번호는 8자 이상 최소 하나의 문자와 하나의 숫자를 포함해야합니다.");
             return;
         }
