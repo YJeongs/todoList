@@ -132,9 +132,9 @@ class UserForm {
             alert("아이디 또는 비밀번호를 입력해주세요");
             return;
         }
-    
-        if (!Valid.isUseridAvailable(this.usersInfo, userid)) {
-            this.idCheck();
+
+        if (!this.idCheck()) {
+            alert("중복 체크를 완료해주세요.");
             return;
         }
 
