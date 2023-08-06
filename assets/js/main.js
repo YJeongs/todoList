@@ -112,45 +112,37 @@ class UserForm {
     //아이디 중복 체크 버튼
     async idCheck() {
         const userid = this.idInput.value.trim();
+        const isAvailable = await Valid.isUseridAvailable(this.usersInfo, userid);
+      
         if (userid === "") {
             alert("아이디를 입력해주세요.");
             return;
         }
-        const isAvailable = await Valid.isUseridAvailable(this.usersInfo, userid);
       
         if (isAvailable) {
             this.idmsg.textContent = "사용가능한 아이디 입니다.";
         } else {
             alert("사용할 수 없는 아이디입니다.");
         }
+
         return isAvailable; 
-        // if (Valid.isUseridAvailable(this.usersInfo, userid)) {
-        //     this.idmsg.textContent = "사용가능한 아이디 입니다.";
-        // } else {
-        //     alert("사용할 수 없는 아이디입니다.");
-        // }
     }
     
     // 회원가입 
     async registerUser() {
         const userid = this.idInput.value.trim();
         const password = this.passwordInput.value;
+        const isIdAvailable = await this.idCheck();  // await를 사용하여 idCheck() 함수를 동기적으로 호출
+        
         if (userid === "" || password === "") {
             alert("아이디 또는 비밀번호를 입력해주세요");
             return;
         }
-        // await를 사용하여 idCheck() 함수를 동기적으로 호출
-        const isIdAvailable = await this.idCheck();
     
         if (!isIdAvailable) {
             alert("중복 체크를 완료해주세요.");
             return;
         }
-
-        // if (!this.idCheck()) {
-        //     alert("중복 체크를 완료해주세요.");
-        //     return;
-        // }
 
         if (!Valid.isPasswordValid(password)) {
             this.pwerrmsg.textContent = "비밀번호를 다시 입력하세요.";
