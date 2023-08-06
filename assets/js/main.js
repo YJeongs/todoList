@@ -134,7 +134,7 @@ class UserForm {
         }
     
         if (!Valid.isUseridAvailable(this.usersInfo, userid)) {
-            alert("사용할 수 없는 아이디입니다.");
+            this.idCheck();
             return;
         }
 
