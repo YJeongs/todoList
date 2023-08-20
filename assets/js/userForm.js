@@ -72,11 +72,9 @@ class UserForm {
         }
 
         this.usersInfo.push({ userid, password }); //배열에 데이터 입력
-        alert("회원가입이 완료되었습니다.");
+        alert(`안녕하세요, ${userid}님😊 회원가입이 완료되었습니다.`);
         this.reset(); //입력값 초기화
     }
 }
 
 export { UserForm };
-// import { init } from "./pageManager.js";
-// init();

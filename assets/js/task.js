@@ -74,5 +74,3 @@ class Task {
 }
 
 export { Task };
-// import { init } from "./pageManager.js";
-// init();
