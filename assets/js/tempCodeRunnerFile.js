@@ -1,1 +1,0 @@
-this.idmsg.textContent = "";
