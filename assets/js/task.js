@@ -1,3 +1,4 @@
+
 //일정 관리 클래스
 class Task {
     static taskscount = 0; 
@@ -73,6 +74,5 @@ class Task {
 }
 
 export { Task };
-//import { init } from "./main.js";
-
-//init();
+// import { init } from "./pageManager.js";
+// init();

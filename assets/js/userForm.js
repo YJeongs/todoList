@@ -1,3 +1,4 @@
+'use strict';
 // 유효성 검사 클래스
 class Valid {
     static isUseridAvailable(usersInfo, userid) {
@@ -77,6 +78,5 @@ class UserForm {
 }
 
 export { UserForm };
-import { init } from "./main.js";
-
-init();
+// import { init } from "./pageManager.js";
+// init();
